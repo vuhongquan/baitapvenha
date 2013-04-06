@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface Game2 : UIViewController
-
+#import <AVFoundation/AVFoundation.h>
+@interface Game2 : UIViewController<AVAudioPlayerDelegate>
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer1;
 @end

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD4F6553170FE7C900DF98C8 /* Unknown-2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CD4F6552170FE7C900DF98C8 /* Unknown-2.jpeg */; };
+		CD4F6555170FE7D500DF98C8 /* Unknown.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CD4F6554170FE7D500DF98C8 /* Unknown.jpeg */; };
+		CD4F6557170FE7E200DF98C8 /* images-3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CD4F6556170FE7E200DF98C8 /* images-3.jpeg */; };
+		CD4F6559170FE7E800DF98C8 /* images-1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CD4F6558170FE7E800DF98C8 /* images-1.jpeg */; };
+		CD4F657217100A6C00DF98C8 /* music2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD4F657117100A6C00DF98C8 /* music2.mp3 */; };
+		CD4F657417100A7100DF98C8 /* music1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD4F657317100A7100DF98C8 /* music1.mp3 */; };
+		CD4F657817100CBD00DF98C8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD4F657717100CBD00DF98C8 /* AVFoundation.framework */; };
+		CD4F657A171025FA00DF98C8 /* anh8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CD4F6579171025FA00DF98C8 /* anh8.jpeg */; };
+		CD4F657C171029E500DF98C8 /* anh10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CD4F657B171029E500DF98C8 /* anh10.jpeg */; };
 		CD977CCB170FD3F300DFC634 /* Game1.m in Sources */ = {isa = PBXBuildFile; fileRef = CD977CCA170FD3F300DFC634 /* Game1.m */; };
 		CD977CCE170FD72300DFC634 /* Game2.m in Sources */ = {isa = PBXBuildFile; fileRef = CD977CCD170FD72300DFC634 /* Game2.m */; };
 		CD977CD1170FD96F00DFC634 /* Game3.m in Sources */ = {isa = PBXBuildFile; fileRef = CD977CD0170FD96F00DFC634 /* Game3.m */; };
@@ -31,14 +40,19 @@
 		CDD6E7C3170D6EDC002091C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD6E7C2170D6EDC002091C8 /* ViewController.m */; };
 		CDD6E7C6170D6EDC002091C8 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD6E7C4170D6EDC002091C8 /* ViewController_iPhone.xib */; };
 		CDD6E7C9170D6EDC002091C8 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD6E7C7170D6EDC002091C8 /* ViewController_iPad.xib */; };
-		CDD6E7D0170D708C002091C8 /* images-1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CDD6E7CF170D708C002091C8 /* images-1.jpeg */; };
-		CDD6E7D6170D70A1002091C8 /* images-3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CDD6E7D5170D70A1002091C8 /* images-3.jpeg */; };
-		CDD6E7DA170D70AF002091C8 /* Unknown.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CDD6E7D9170D70AF002091C8 /* Unknown.jpeg */; };
-		CDD6E7DC170D70B5002091C8 /* Unknown-2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CDD6E7DB170D70B5002091C8 /* Unknown-2.jpeg */; };
 		CDD6E7EE170D7857002091C8 /* hinhcard.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CDD6E7ED170D7857002091C8 /* hinhcard.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD4F6552170FE7C900DF98C8 /* Unknown-2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Unknown-2.jpeg"; sourceTree = "<group>"; };
+		CD4F6554170FE7D500DF98C8 /* Unknown.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Unknown.jpeg; sourceTree = "<group>"; };
+		CD4F6556170FE7E200DF98C8 /* images-3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "images-3.jpeg"; sourceTree = "<group>"; };
+		CD4F6558170FE7E800DF98C8 /* images-1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "images-1.jpeg"; sourceTree = "<group>"; };
+		CD4F657117100A6C00DF98C8 /* music2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music2.mp3; sourceTree = "<group>"; };
+		CD4F657317100A7100DF98C8 /* music1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music1.mp3; sourceTree = "<group>"; };
+		CD4F657717100CBD00DF98C8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CD4F6579171025FA00DF98C8 /* anh8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = anh8.jpeg; sourceTree = "<group>"; };
+		CD4F657B171029E500DF98C8 /* anh10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = anh10.jpeg; sourceTree = "<group>"; };
 		CD977CC9170FD3F300DFC634 /* Game1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game1.h; sourceTree = "<group>"; };
 		CD977CCA170FD3F300DFC634 /* Game1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game1.m; sourceTree = "<group>"; };
 		CD977CCC170FD72300DFC634 /* Game2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game2.h; sourceTree = "<group>"; };
@@ -71,10 +85,6 @@
 		CDD6E7C2170D6EDC002091C8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CDD6E7C5170D6EDC002091C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		CDD6E7C8170D6EDC002091C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
-		CDD6E7CF170D708C002091C8 /* images-1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "images-1.jpeg"; path = "../images-1.jpeg"; sourceTree = "<group>"; };
-		CDD6E7D5170D70A1002091C8 /* images-3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "images-3.jpeg"; path = "../images-3.jpeg"; sourceTree = "<group>"; };
-		CDD6E7D9170D70AF002091C8 /* Unknown.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Unknown.jpeg; path = ../Unknown.jpeg; sourceTree = "<group>"; };
-		CDD6E7DB170D70B5002091C8 /* Unknown-2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Unknown-2.jpeg"; path = "../Unknown-2.jpeg"; sourceTree = "<group>"; };
 		CDD6E7ED170D7857002091C8 /* hinhcard.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hinhcard.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD4F657817100CBD00DF98C8 /* AVFoundation.framework in Frameworks */,
 				CDD6E7AA170D6EDC002091C8 /* UIKit.framework in Frameworks */,
 				CDD6E7AC170D6EDC002091C8 /* Foundation.framework in Frameworks */,
 				CDD6E7AE170D6EDC002091C8 /* CoreGraphics.framework in Frameworks */,
@@ -92,7 +103,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CD977CD2170FD97A00DFC634 /* New Group */ = {
+		CD977CD2170FD97A00DFC634 /* GameView */ = {
 			isa = PBXGroup;
 			children = (
 				CD977CC9170FD3F300DFC634 /* Game1.h */,
@@ -102,12 +113,18 @@
 				CD977CCF170FD96F00DFC634 /* Game3.h */,
 				CD977CD0170FD96F00DFC634 /* Game3.m */,
 			);
-			name = "New Group";
+			name = GameView;
 			sourceTree = "<group>";
 		};
 		CDD6E79D170D6EDC002091C8 = {
 			isa = PBXGroup;
 			children = (
+				CD4F657B171029E500DF98C8 /* anh10.jpeg */,
+				CD4F6579171025FA00DF98C8 /* anh8.jpeg */,
+				CD4F6558170FE7E800DF98C8 /* images-1.jpeg */,
+				CD4F6556170FE7E200DF98C8 /* images-3.jpeg */,
+				CD4F6554170FE7D500DF98C8 /* Unknown.jpeg */,
+				CD4F6552170FE7C900DF98C8 /* Unknown-2.jpeg */,
 				CD977CD5170FE36C00DFC634 /* anh6.jpg */,
 				CD977CD3170FE36900DFC634 /* anh7.jpg */,
 				CD99F2E5170F0C7200F5432A /* anh5.jpg */,
@@ -118,10 +135,6 @@
 				CD99F292170EBCA500F5432A /* Candy-Racer-Start-Screen.png */,
 				CD99F28E170EB16B00F5432A /* hinhnen1.jpeg */,
 				CDD6E7ED170D7857002091C8 /* hinhcard.jpeg */,
-				CDD6E7DB170D70B5002091C8 /* Unknown-2.jpeg */,
-				CDD6E7D9170D70AF002091C8 /* Unknown.jpeg */,
-				CDD6E7D5170D70A1002091C8 /* images-3.jpeg */,
-				CDD6E7CF170D708C002091C8 /* images-1.jpeg */,
 				CDD6E7AF170D6EDC002091C8 /* GameDemoImage */,
 				CDD6E7A8170D6EDC002091C8 /* Frameworks */,
 				CDD6E7A7170D6EDC002091C8 /* Products */,
@@ -139,6 +152,7 @@
 		CDD6E7A8170D6EDC002091C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD4F657717100CBD00DF98C8 /* AVFoundation.framework */,
 				CDD6E7A9170D6EDC002091C8 /* UIKit.framework */,
 				CDD6E7AB170D6EDC002091C8 /* Foundation.framework */,
 				CDD6E7AD170D6EDC002091C8 /* CoreGraphics.framework */,
@@ -155,7 +169,7 @@
 				CDD6E7C2170D6EDC002091C8 /* ViewController.m */,
 				CDD6E7C4170D6EDC002091C8 /* ViewController_iPhone.xib */,
 				CDD6E7C7170D6EDC002091C8 /* ViewController_iPad.xib */,
-				CD977CD2170FD97A00DFC634 /* New Group */,
+				CD977CD2170FD97A00DFC634 /* GameView */,
 				CDD6E7B0170D6EDC002091C8 /* Supporting Files */,
 			);
 			path = GameDemoImage;
@@ -164,6 +178,8 @@
 		CDD6E7B0170D6EDC002091C8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CD4F657317100A7100DF98C8 /* music1.mp3 */,
+				CD4F657117100A6C00DF98C8 /* music2.mp3 */,
 				CDD6E7B1170D6EDC002091C8 /* GameDemoImage-Info.plist */,
 				CDD6E7B2170D6EDC002091C8 /* InfoPlist.strings */,
 				CDD6E7B5170D6EDC002091C8 /* main.m */,
@@ -232,10 +248,6 @@
 				CDD6E7C0170D6EDC002091C8 /* Default-568h@2x.png in Resources */,
 				CDD6E7C6170D6EDC002091C8 /* ViewController_iPhone.xib in Resources */,
 				CDD6E7C9170D6EDC002091C8 /* ViewController_iPad.xib in Resources */,
-				CDD6E7D0170D708C002091C8 /* images-1.jpeg in Resources */,
-				CDD6E7D6170D70A1002091C8 /* images-3.jpeg in Resources */,
-				CDD6E7DA170D70AF002091C8 /* Unknown.jpeg in Resources */,
-				CDD6E7DC170D70B5002091C8 /* Unknown-2.jpeg in Resources */,
 				CDD6E7EE170D7857002091C8 /* hinhcard.jpeg in Resources */,
 				CD99F28F170EB16B00F5432A /* hinhnen1.jpeg in Resources */,
 				CD99F293170EBCA500F5432A /* Candy-Racer-Start-Screen.png in Resources */,
@@ -246,6 +258,14 @@
 				CD99F2E6170F0C7200F5432A /* anh5.jpg in Resources */,
 				CD977CD4170FE36900DFC634 /* anh7.jpg in Resources */,
 				CD977CD6170FE36C00DFC634 /* anh6.jpg in Resources */,
+				CD4F6553170FE7C900DF98C8 /* Unknown-2.jpeg in Resources */,
+				CD4F6555170FE7D500DF98C8 /* Unknown.jpeg in Resources */,
+				CD4F6557170FE7E200DF98C8 /* images-3.jpeg in Resources */,
+				CD4F6559170FE7E800DF98C8 /* images-1.jpeg in Resources */,
+				CD4F657217100A6C00DF98C8 /* music2.mp3 in Resources */,
+				CD4F657417100A7100DF98C8 /* music1.mp3 in Resources */,
+				CD4F657A171025FA00DF98C8 /* anh8.jpeg in Resources */,
+				CD4F657C171029E500DF98C8 /* anh10.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,10 +376,16 @@
 		CDD6E7CD170D6EDC002091C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameDemoImage/GameDemoImage-Prefix.pch";
 				INFOPLIST_FILE = "GameDemoImage/GameDemoImage-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -367,10 +393,16 @@
 		CDD6E7CE170D6EDC002091C8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameDemoImage/GameDemoImage-Prefix.pch";
 				INFOPLIST_FILE = "GameDemoImage/GameDemoImage-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

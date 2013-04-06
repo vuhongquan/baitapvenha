@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>framWord.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>CD4F655F170FFCAC00DF98C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CDD6E7A5170D6EDC002091C8</key>
 		<dict>
 			<key>primary</key>
