@@ -10,4 +10,5 @@
 #import <AVFoundation/AVFoundation.h>
 @interface Game1 : UIViewController <AVAudioPlayerDelegate>
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer1;
 @end

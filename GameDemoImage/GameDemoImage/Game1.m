@@ -10,7 +10,9 @@
 #import "Game2.h"
 @interface Game1 ()
 {
-    UIButton * replay;
+    UILabel * _scoreYouhave;
+    UILabel * _score;
+    UIButton * _replay;
     UIView * _front;
     UIView * _game1;
     UIImageView *_anhnen1;
@@ -22,17 +24,18 @@
     NSMutableArray *_game1ImageView;
     NSArray * _game1DataImageView;
     
+    UILabel * _point;
     UILabel * _label1;
     UIButton * _nextRound;
     UIImageView * _anhChon1;
     UIImageView * _anhChon2;
-    NSInteger  count;
-    NSInteger  count1;
+    NSInteger  _count;
+    NSInteger  _count1;
     UILabel * _labelA;
-    NSInteger  timecount;
-    NSTimer * time;
-    NSTimer *time1;
-
+    NSInteger  _timecount;
+    NSTimer * _time;
+    NSTimer * _time1;
+    NSInteger _count2;
     
     UIProgressView * progress;
     
@@ -60,8 +63,17 @@
 
 - (void)viewDidLoad
 {
+    self.title = @"LEVEL 1";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sound/on" style:UIBarButtonItemStyleDone target:self action:@selector(soundOn)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sound/off" style:UIBarButtonItemStyleDone target:self action:@selector(soundoff)];
     [super viewDidLoad];
-    count = 8;
+    _count2 = 0;
+    _count = 8;
+    _point =[[UILabel alloc]initWithFrame:CGRectMake(20, 20, 100, 40)];
+    _point.backgroundColor = [UIColor redColor];
+    _point.textColor = [UIColor whiteColor];
+    _point.text =[NSString stringWithFormat:@"%d",_count2];
+    [_game1 addSubview:_point];
     _game1DataImageView = [NSMutableArray arrayWithArray:@[@"Unknown-2.jpeg",@"Unknown-2.jpeg",@"Unknown.jpeg",@"Unknown.jpeg",@"images-3.jpeg",@"images-3.jpeg",@"images-1.jpeg",@"images-1.jpeg"]];
     _game1ImageView = [NSMutableArray arrayWithArray: _game1DataImageView];
     
@@ -79,12 +91,19 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     [self.audioPlayer stop];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void) soundOn{
+    [self.audioPlayer play];
+}
+-(void)soundoff{
+    [self.audioPlayer stop];
 }
 -(void) musicInGame{
     dispatch_queue_t dispatchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -123,64 +142,72 @@
     _label1.font = [UIFont systemFontOfSize:100];
     
     [self.view addSubview:_label1];
-    timecount = 3;
-    time=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshLabel) userInfo:Nil repeats:YES];
-    [time fire];
+    _timecount = 3;
+    _time=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshLabel) userInfo:Nil repeats:YES];
+    [_time fire];
 }
-
 - (void)refreshLabel{
-    _label1.text = [NSString stringWithFormat:@"%d",timecount];
-    if (timecount == 0) {
-        [time invalidate];
+    _label1.text = [NSString stringWithFormat:@"%d",_timecount];
+    if (_timecount == 0) {
+        [_time invalidate];
         [self createView1];
         [self musicInGame];
     }
-    timecount --;
+    _timecount --;
     
 }
 -(void)losegame{
     _loseGame = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 768, 1040)];
     _loseGame.backgroundColor = [UIColor clearColor];
-    [_game1 addSubview:_loseGame];
+   
     _losegame=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 768, 1040)];
     _losegame.image = [UIImage imageNamed:@"anh10.jpeg"];
-    [_loseGame addSubview:_losegame];
-    replay = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 300, 40)];
-    replay.center = self.view.center;
-    replay.font = [UIFont systemFontOfSize:50];
-    [replay setTitle:@"Replay" forState:UIControlStateNormal];
-    [replay addTarget:self action:@selector(createView1) forControlEvents:UIControlEventTouchUpInside];
-    [_loseGame addSubview:replay];
+    
+    _replay = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 300, 40)];
+    _replay.center = self.view.center;
+    [_replay setTitle:@"Replay" forState:UIControlStateNormal];
+    [_replay addTarget:self action:@selector(createView1) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_loseGame];
+    [self.view addSubview:_losegame];
+    [self.view addSubview:_replay];
 }
 -(void)refreshProgress{
 
-    progress.progress = count1/50.0;
-    count1--;
-    if (count1==0) {
+    progress.progress = _count1/10.0;
+    _count1--;
+    if (_count1==0) {
         [self losegame];
-        [self.audioPlayer stop];
+        [_time1 invalidate];
         [progress removeFromSuperview];
+        [self.audioPlayer stop];
     }
 }
 - (void) createView1
 {
     //Tao View
+    [self.audioPlayer play];
     _game1 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 768, 1040)];
-    _game1.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:1.0 alpha:1.0];
+    _game1.backgroundColor = [UIColor blackColor];
     [self.view addSubview:_game1];
+    _point =[[UILabel alloc]initWithFrame:CGRectMake(345,40, 200, 50)];
+    _point.backgroundColor = [UIColor clearColor];
+    _point.textColor = [UIColor whiteColor];
+    _point.font = [UIFont systemFontOfSize:30];
+    _point.text =[NSString stringWithFormat:@"Point: %d",_count2];
+    [_game1 addSubview:_point];
+    _count1=10.0;
+    _time1=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshProgress) userInfo:Nil repeats:YES];
+    [_time1 fire];
     
-    count1=50.0;
-    time1=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshProgress) userInfo:Nil repeats:YES];
-    [time1 fire];
-    
-    progress = [[UIProgressView alloc]initWithFrame:CGRectMake(10, 10, 400, 30)];
+    progress = [[UIProgressView alloc]initWithFrame:CGRectMake(25, 10, 715, 0)];
     progress.progressViewStyle = UIProgressViewStyleBar;
     progress.progress = 1;
     [self.view addSubview:progress];
     
+    
     UITapGestureRecognizer * Tap[8];
     for (int k = 0; k < 8; k++) {
-        _anh[k] = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"hinhcard.jpeg"]];
+        _anh[k] = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"anhcard.jpg"]];
         _anh[k].tag = k;
         [_game1 addSubview:_anh[k]];
         _anh[k].userInteractionEnabled = YES;
@@ -225,23 +252,30 @@
                                 NSLog(@"Dung");
                                 [_anhChon1 removeFromSuperview];
                                 [_anhChon2 removeFromSuperview];
-                                count -=2;
-                                if (count == 0) {
+                                _count2 +=500;
+                                _point.text =[NSString stringWithFormat:@"Point: %d",_count2];
+                                _count -=2;
+                                if (_count == 0) {
                                     [self endgame];
                                     [self.audioPlayer stop];
                                     [progress removeFromSuperview];
+                                    [_time1 invalidate];
                                 }
                             } else {
                                 NSLog(@"Sai");
+                                if (_count2 !=0) {
+                                    _count2 -=10;
+                                    _point.text =[NSString stringWithFormat:@"Point :%d",_count2];
+                                }
                                 [UIView transitionWithView:_anhChon1 duration:0.5
                                                    options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
-                                                       _anhChon1.image = [UIImage imageNamed:@"hinhcard.jpeg"];
+                                                       _anhChon1.image = [UIImage imageNamed:@"anhcard.jpg"];
                                                    }
                                                 completion:^(BOOL finished){}];
                                 
                                 [UIView transitionWithView:_anhChon2 duration:0.5
                                                    options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
-                                                       _anhChon2.image = [UIImage imageNamed:@"hinhcard.jpeg"];
+                                                       _anhChon2.image = [UIImage imageNamed:@"anhcard.jpg"];
                                                    }
                                                 completion:^(BOOL finished){}];
                                 
@@ -255,26 +289,40 @@
     
 }
 -(void)endgame{
-    
     _complete = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 768, 1040)];
     _anhnen1=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 768, 1040)];
     _anhnen1.image = [UIImage imageNamed:@"anh2.jpg"];
-    _labelA = [[UILabel alloc]initWithFrame:CGRectMake(240, 200, 400, 300)];
+    
+    _labelA = [[UILabel alloc]initWithFrame:CGRectMake(230, 200, 400, 300)];
     _labelA.backgroundColor = [UIColor clearColor];
     _labelA.text =@"GOOD JOB";
-    _labelA.textColor = [UIColor yellowColor];
+    _labelA.textColor = [UIColor redColor];
     _labelA.font = [UIFont systemFontOfSize:70];
-    [_complete addSubview:_anhnen1];
-    [_complete addSubview:_labelA];
-    [_game1 addSubview:_complete];
     
+    _score = [[UILabel alloc]initWithFrame:CGRectMake(160,0,600, 200)];
+    _score.backgroundColor = [UIColor clearColor];
+    _score.text =@"You Have New Score";
+    _score.textColor = [UIColor redColor];
+    _score.font = [UIFont systemFontOfSize:50];
+    
+    _scoreYouhave = [[UILabel alloc]initWithFrame:CGRectMake(310,50,400, 200)];
+    _scoreYouhave.backgroundColor = [UIColor clearColor];
+    _scoreYouhave.text =[NSString stringWithFormat:@"%d",_count2];
+    _scoreYouhave.textColor = [UIColor redColor];
+    _scoreYouhave.font = [UIFont systemFontOfSize:60];
     
     _nextRound = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _nextRound.frame = CGRectMake(325,500, 150, 50);
+    _nextRound.frame = CGRectMake(325,800, 150, 50);
     [_nextRound addTarget:self action:@selector(GameView2) forControlEvents:UIControlEventTouchUpInside];
     [_nextRound setTitle:@"Next Level" forState:UIControlStateNormal];
-    [_complete addSubview:_nextRound];
     
+    [self.view addSubview:_scoreYouhave];
+    [self.view addSubview:_score];
+    [_complete addSubview:_anhnen1];
+    [_complete addSubview:_labelA];
+    [_complete addSubview:_nextRound];
+    [_game1 addSubview:_complete];
+
 }
 -(void)GameView2{
     Game2 * game2 = [[Game2 alloc]init];

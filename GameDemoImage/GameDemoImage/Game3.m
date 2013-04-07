@@ -56,8 +56,10 @@
 
 - (void)viewDidLoad
 {
+    self.title = @"LEVEL 3";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sound/on" style:UIBarButtonItemStyleDone target:self action:@selector(soundOn)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sound/off" style:UIBarButtonItemStyleDone target:self action:@selector(soundoff)];
     [super viewDidLoad];
-    [self createView3];
     [self front1];
 	// Do any additional setup after loading the view.
 }
@@ -92,6 +94,12 @@
 }
 - (void)viewDidDisappear:(BOOL)animated
 {
+    [self.audioPlayer2 stop];
+}
+-(void) soundOn{
+    [self.audioPlayer2 play];
+}
+-(void)soundoff{
     [self.audioPlayer2 stop];
 }
 -(void) front1{
@@ -129,8 +137,8 @@
     [_loseGame addSubview:_losegame];
     replay = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 80, 200)];
     replay.center = self.view.center;
-    [_loseGame addSubview:replay];
     [replay addTarget:self action:@selector(createView3) forControlEvents:UIControlEventTouchUpInside];
+    [_loseGame addSubview:replay];
 }
 -(void)refreshProgress1{
     progress.progress = count1/200.0;
@@ -138,11 +146,14 @@
     if (count1==0) {
         [progress removeFromSuperview];
         [self.audioPlayer2 stop];
+        [time1 invalidate];
         [self losegame];
+        
     }
 }
 
 -(void)createView3{
+    [self.audioPlayer2 play];
     count =16;
     _game3DataImageView = [NSMutableArray arrayWithArray:@[@"Unknown-2.jpeg",@"Unknown-2.jpeg",@"Unknown.jpeg",@"Unknown.jpeg",@"images-3.jpeg",@"images-3.jpeg",@"images-1.jpeg",@"images-1.jpeg",@"anh4.jpg",@"anh4.jpg",@"anh3.jpg",@"anh3.jpg",@"anh6.jpg",@"anh6.jpg",@"anh7.jpg",@"anh7.jpg"]];
     _game3ImageView = [NSMutableArray arrayWithArray: _game3DataImageView];
@@ -155,7 +166,7 @@
     }
     _game3.hidden =YES;
     _game3 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 768, 1040)];
-    _game3.backgroundColor = [UIColor  colorWithRed:0.5 green:0.5 blue:1.0 alpha:1.0];
+    _game3.backgroundColor = [UIColor  whiteColor];
     [self.view addSubview:_game3];
     
     
@@ -163,14 +174,14 @@
     time1=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshProgress1) userInfo:Nil repeats:YES];
     [time1 fire];
     
-    progress = [[UIProgressView alloc]initWithFrame:CGRectMake(10, 10, 400, 30)];
+    progress = [[UIProgressView alloc]initWithFrame:CGRectMake(25, 10, 715, 0)];
     progress.progressViewStyle = UIProgressViewStyleBar;
     progress.progress = 1;
     [self.view addSubview:progress];
     
     UITapGestureRecognizer * Tap[16];
     for (int k = 0; k < 16; k++) {
-        _anh2[k] = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"anh8.jpeg"]];
+        _anh2[k] = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"anhcard.jpg"]];
         _anh2[k].tag = k;
         [_game3 addSubview:_anh2[k]];
         _anh2[k].userInteractionEnabled = YES;
@@ -203,6 +214,12 @@
 {
     
     UIImageView *imageView2 = (UIImageView *)gesture.view;
+    if (_anhChon1 && !_anhChon2) {
+        if (_anhChon1 == imageView2) {
+            return;
+        }
+    }
+    
     [UIView transitionWithView:imageView2 duration:0.3
                        options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
                            imageView2.image = [UIImage imageNamed:_game3ImageView[imageView2.tag]];
@@ -223,20 +240,20 @@
                                 count -=2;
                                 if (count == 0) {
                                     [self endgame1];
-                                    [self.audioPlayer2 stop];
+                                    [time1 invalidate];
                                     [progress removeFromSuperview];
                                 }
                             } else {
                                 NSLog(@"Sai");
-                                [UIView transitionWithView:_anhChon1 duration:0.3
+                                [UIView transitionWithView:_anhChon1 duration:0.5
                                                    options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
-                                                       _anhChon1.image = [UIImage imageNamed:@"hinhcard.jpeg"];
+                                                       _anhChon1.image = [UIImage imageNamed:@"anhcard.jpg"];
                                                    }
                                                 completion:^(BOOL finished){}];
                                 
-                                [UIView transitionWithView:_anhChon2 duration:0.3
+                                [UIView transitionWithView:_anhChon2 duration:0.5
                                                    options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
-                                                       _anhChon2.image = [UIImage imageNamed:@"hinhcard.jpeg"];
+                                                       _anhChon2.image = [UIImage imageNamed:@"anhcard.jpg"];
                                                    }
                                                 completion:^(BOOL finished){}];
                                 
@@ -257,7 +274,7 @@
     _labalA= [[UILabel alloc]initWithFrame:CGRectMake(150, 200, 600, 300)];
     _labalA.backgroundColor = [UIColor clearColor];
     _labalA.text =@"SEE YOU LATER";
-    _labalA.textColor = [UIColor yellowColor];
+    _labalA.textColor = [UIColor redColor];
     _labalA.font = [UIFont systemFontOfSize:70];
     [_complete addSubview:_anhnen3];
     [_complete addSubview:_labalA];

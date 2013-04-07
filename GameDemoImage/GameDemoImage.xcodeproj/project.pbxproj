@@ -16,6 +16,10 @@
 		CD4F657817100CBD00DF98C8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD4F657717100CBD00DF98C8 /* AVFoundation.framework */; };
 		CD4F657A171025FA00DF98C8 /* anh8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CD4F6579171025FA00DF98C8 /* anh8.jpeg */; };
 		CD4F657C171029E500DF98C8 /* anh10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CD4F657B171029E500DF98C8 /* anh10.jpeg */; };
+		CD956F8817111D14003ACF70 /* anhcard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD956F8717111D14003ACF70 /* anhcard.jpg */; };
+		CD956F8C17111E40003ACF70 /* anhnen3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD956F8B17111E40003ACF70 /* anhnen3.jpg */; };
+		CD956F9017112244003ACF70 /* music3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD956F8F17112244003ACF70 /* music3.mp3 */; };
+		CD956F9417114DAF003ACF70 /* music4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD956F9317114DAF003ACF70 /* music4.mp3 */; };
 		CD977CCB170FD3F300DFC634 /* Game1.m in Sources */ = {isa = PBXBuildFile; fileRef = CD977CCA170FD3F300DFC634 /* Game1.m */; };
 		CD977CCE170FD72300DFC634 /* Game2.m in Sources */ = {isa = PBXBuildFile; fileRef = CD977CCD170FD72300DFC634 /* Game2.m */; };
 		CD977CD1170FD96F00DFC634 /* Game3.m in Sources */ = {isa = PBXBuildFile; fileRef = CD977CD0170FD96F00DFC634 /* Game3.m */; };
@@ -53,6 +57,10 @@
 		CD4F657717100CBD00DF98C8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CD4F6579171025FA00DF98C8 /* anh8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = anh8.jpeg; sourceTree = "<group>"; };
 		CD4F657B171029E500DF98C8 /* anh10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = anh10.jpeg; sourceTree = "<group>"; };
+		CD956F8717111D14003ACF70 /* anhcard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = anhcard.jpg; sourceTree = "<group>"; };
+		CD956F8B17111E40003ACF70 /* anhnen3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = anhnen3.jpg; sourceTree = "<group>"; };
+		CD956F8F17112244003ACF70 /* music3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music3.mp3; sourceTree = "<group>"; };
+		CD956F9317114DAF003ACF70 /* music4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music4.mp3; sourceTree = "<group>"; };
 		CD977CC9170FD3F300DFC634 /* Game1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game1.h; sourceTree = "<group>"; };
 		CD977CCA170FD3F300DFC634 /* Game1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game1.m; sourceTree = "<group>"; };
 		CD977CCC170FD72300DFC634 /* Game2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game2.h; sourceTree = "<group>"; };
@@ -119,6 +127,8 @@
 		CDD6E79D170D6EDC002091C8 = {
 			isa = PBXGroup;
 			children = (
+				CD956F8B17111E40003ACF70 /* anhnen3.jpg */,
+				CD956F8717111D14003ACF70 /* anhcard.jpg */,
 				CD4F657B171029E500DF98C8 /* anh10.jpeg */,
 				CD4F6579171025FA00DF98C8 /* anh8.jpeg */,
 				CD4F6558170FE7E800DF98C8 /* images-1.jpeg */,
@@ -178,6 +188,8 @@
 		CDD6E7B0170D6EDC002091C8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CD956F9317114DAF003ACF70 /* music4.mp3 */,
+				CD956F8F17112244003ACF70 /* music3.mp3 */,
 				CD4F657317100A7100DF98C8 /* music1.mp3 */,
 				CD4F657117100A6C00DF98C8 /* music2.mp3 */,
 				CDD6E7B1170D6EDC002091C8 /* GameDemoImage-Info.plist */,
@@ -266,6 +278,10 @@
 				CD4F657417100A7100DF98C8 /* music1.mp3 in Resources */,
 				CD4F657A171025FA00DF98C8 /* anh8.jpeg in Resources */,
 				CD4F657C171029E500DF98C8 /* anh10.jpeg in Resources */,
+				CD956F8817111D14003ACF70 /* anhcard.jpg in Resources */,
+				CD956F8C17111E40003ACF70 /* anhnen3.jpg in Resources */,
+				CD956F9017112244003ACF70 /* music3.mp3 in Resources */,
+				CD956F9417114DAF003ACF70 /* music4.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
