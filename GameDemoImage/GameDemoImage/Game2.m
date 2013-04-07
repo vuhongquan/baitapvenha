@@ -9,6 +9,7 @@
 #import "Game3.h"
 @interface Game2 ()
 {
+    UISwitch *_mySwitch;
     UIButton *replay;
     UIImageView * _losegame;
     UIView * _loseGame;
@@ -19,7 +20,6 @@
     UIView * _complete;
     UIImageView * _anhnen2;
     UIImageView * _anh1[12];
-    UIButton * _nextRound;
     UIImageView * _anhChon1;
     UIImageView * _anhChon2;
     NSInteger  _counter;
@@ -55,8 +55,12 @@
 - (void)viewDidLoad
 {
     self.title = @"LEVEL 2";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sound/on" style:UIBarButtonItemStyleDone target:self action:@selector(soundOn)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sound/off" style:UIBarButtonItemStyleDone target:self action:@selector(soundoff)];
+    [_mySwitch setOn:NO];
+    _mySwitch = [[UISwitch alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [_mySwitch addTarget:self action:@selector(switchIsChanged:) forControlEvents:UIControlEventValueChanged];
+    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc]
+                                   initWithCustomView:_mySwitch];
+    self.navigationItem.rightBarButtonItem= buttonItem;
     [super viewDidLoad];
     [self front1];
 	// Do any additional setup after loading the view.
@@ -94,11 +98,12 @@
 {
     [self.audioPlayer1 stop];
 }
--(void) soundOn{
-    [self.audioPlayer1 play];
-}
--(void)soundoff{
-    [self.audioPlayer1 stop];
+- (void) switchIsChanged:(UISwitch *)soundChange{
+    if ([_mySwitch isOn]) {
+        [self.audioPlayer1 stop];
+    } else {
+        [self.audioPlayer1 play];
+    }
 }
 -(void) front1{
     _front =[[UIView alloc]initWithFrame:CGRectMake(0,0, 768, 1040)];
@@ -191,19 +196,6 @@
     
 }
 
-- (void)NextLevel:(id)sender {
-    
-    _isStart = !_isStart;
-    if (_isStart) {
-        _game2.hidden = NO;
-        [_nextRound removeFromSuperview];
-        
-    } else {
-        _game2.hidden = YES;
-        [_nextRound setTitle:@"Next Round" forState:UIControlStateNormal];
-    }
-    
-}
 -(void) flip1: (UITapGestureRecognizer *) gesture
 {
     
@@ -236,6 +228,7 @@
                                     [self endgame1];
                                     [progress removeFromSuperview];
                                     [_timer2 invalidate];
+                                    [self.audioPlayer1 stop];
                                 }
                             } else {
                                 NSLog(@"Sai");
@@ -272,13 +265,9 @@
     _labalA.font = [UIFont systemFontOfSize:70];
     
 
-    _nextRound = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _nextRound.frame = CGRectMake(325,500, 150, 50);
-    [_nextRound addTarget:self action:@selector(GameView3) forControlEvents:UIControlEventTouchUpInside];
-    [_nextRound setTitle:@"Next Level" forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"NextRound" style:UIBarButtonItemStyleDone target:self action:@selector(GameView3)];
     [_complete addSubview:_anhnen2];
     [_complete addSubview:_labalA];
-    [_complete addSubview:_nextRound];
     [_game2 addSubview:_complete];
     
 }

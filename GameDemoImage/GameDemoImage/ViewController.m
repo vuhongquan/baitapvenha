@@ -18,7 +18,7 @@
       UIButton * _startGame;
       UIButton * _loadGame;
       NSInteger  count;
-
+      UISwitch * _mySwitch;
 
     BOOL _isFrontFace;
     BOOL _isStart;
@@ -36,8 +36,13 @@
 
 - (void)viewDidLoad
 {
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sound/off" style:UIBarButtonItemStyleDone target:self action:@selector(soundoff)];
-     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sound/on" style:UIBarButtonItemStyleDone target:self action:@selector(soundOn)];
+    [_mySwitch setOn:NO];
+    _mySwitch = [[UISwitch alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [_mySwitch addTarget:self action:@selector(switchIsChanged:) forControlEvents:UIControlEventValueChanged];
+    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc]
+                                   initWithCustomView:_mySwitch];
+    self.navigationItem.rightBarButtonItem= buttonItem;
+    
     [super viewDidLoad];
     [self musicInGame];
     self.title = @"Game Image Demo";
@@ -65,24 +70,7 @@
     [_loadGame setTitle:@"Game Load" forState:UIControlStateNormal];
     [_home addSubview:_loadGame];
     
-    //Tao nut to nho nhac
-    _soundon = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _soundon.frame = CGRectMake(50,50,50,50);
-    [_soundon addTarget:self action:@selector(soundOn) forControlEvents:UIControlEventTouchUpInside];
-    [_soundon setTitle:@"Sound/On" forState:UIControlStateNormal];
-    _soundon.adjustsImageWhenHighlighted=NO;
-    _soundon.adjustsImageWhenDisabled=NO;
-    _soundon.tag = 0;
-    _soundon = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _soundon.frame = CGRectMake(50,50,50,50);
-    [_soundoff addTarget:self action:@selector(soundoff) forControlEvents:UIControlEventTouchUpInside];
-    [_soundoff setTitle:@"Sound/Off" forState:UIControlStateNormal];
-    _soundoff.adjustsImageWhenHighlighted=NO;
-    _soundoff.adjustsImageWhenDisabled=NO;
-    _soundoff.tag = 0;
-    _soundoff.backgroundColor = [UIColor clearColor];
-
-
+   
 }
 - (void)didReceiveMemoryWarning
 {
@@ -93,14 +81,15 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     [self.audioPlayer stop];
+}
+- (void) switchIsChanged:(UISwitch *)soundChange{
+    if ([_mySwitch isOn]) {
+        [self.audioPlayer stop];
+    } else {
+        [self.audioPlayer play];
+    }
+}
 
-}
--(void)soundOn{
-    [self.audioPlayer play];
-}
--(void)soundoff{
-    [self.audioPlayer stop];
-}
 -(void) musicInGame{
     dispatch_queue_t dispatchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
@@ -122,6 +111,7 @@
         [self.audioPlayer prepareToPlay];
         [self.audioPlayer play];
         self.audioPlayer.volume = 1;
+        return;
     });
 }
 

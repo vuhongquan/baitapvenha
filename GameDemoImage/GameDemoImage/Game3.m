@@ -10,6 +10,7 @@
 #import "ViewController.h"
 @interface Game3 ()
 {
+    UISwitch * _mySwitch;
     UIButton * replay;
     UIView * _loseGame;
     UIImageView * _losegame;
@@ -20,7 +21,6 @@
     UIView * _complete;
     UIImageView * _anhnen3;
     UIImageView * _anh2[16];
-    UIButton * _nextRound;
     UIImageView * _anhChon1;
     UIImageView * _anhChon2;
     NSInteger  count;
@@ -57,8 +57,12 @@
 - (void)viewDidLoad
 {
     self.title = @"LEVEL 3";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sound/on" style:UIBarButtonItemStyleDone target:self action:@selector(soundOn)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sound/off" style:UIBarButtonItemStyleDone target:self action:@selector(soundoff)];
+    [_mySwitch setOn:NO];
+    _mySwitch = [[UISwitch alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [_mySwitch addTarget:self action:@selector(switchIsChanged:) forControlEvents:UIControlEventValueChanged];
+    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc]
+                                   initWithCustomView:_mySwitch];
+    self.navigationItem.rightBarButtonItem= buttonItem;
     [super viewDidLoad];
     [self front1];
 	// Do any additional setup after loading the view.
@@ -96,11 +100,12 @@
 {
     [self.audioPlayer2 stop];
 }
--(void) soundOn{
-    [self.audioPlayer2 play];
-}
--(void)soundoff{
-    [self.audioPlayer2 stop];
+- (void) switchIsChanged:(UISwitch *)soundChange{
+    if ([_mySwitch isOn]) {
+        [self.audioPlayer2 stop];
+    } else {
+        [self.audioPlayer2 play];
+    }
 }
 -(void) front1{
     _front =[[UIView alloc]initWithFrame:CGRectMake(0,0, 768, 1040)];
@@ -197,19 +202,6 @@
     
 }
 
-- (void)NextLevel:(id)sender {
-    
-    _isStart = !_isStart;
-    if (_isStart) {
-        _game3.hidden = NO;
-        [_nextRound removeFromSuperview];
-        
-    } else {
-        _game3.hidden = YES;
-        [_nextRound setTitle:@"Next Round" forState:UIControlStateNormal];
-    }
-    
-}
 -(void) flip1: (UITapGestureRecognizer *) gesture
 {
     
@@ -220,7 +212,7 @@
         }
     }
     
-    [UIView transitionWithView:imageView2 duration:0.3
+    [UIView transitionWithView:imageView2 duration:0.5
                        options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
                            imageView2.image = [UIImage imageNamed:_game3ImageView[imageView2.tag]];
                        }
@@ -242,6 +234,7 @@
                                     [self endgame1];
                                     [time1 invalidate];
                                     [progress removeFromSuperview];
+                                    [self.audioPlayer2 stop];
                                 }
                             } else {
                                 NSLog(@"Sai");
@@ -280,11 +273,9 @@
     [_complete addSubview:_labalA];
     [_game3 addSubview:_complete];
     
-    _nextRound = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _nextRound.frame = CGRectMake(325,500, 150, 50);
-    [_nextRound addTarget:self action:@selector(gameView) forControlEvents:UIControlEventTouchUpInside];
-    [_nextRound setTitle:@"COMPLETE" forState:UIControlStateNormal];
-    [_complete addSubview:_nextRound];
+self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"Complete" style:UIBarButtonItemStyleDone target:self action:@selector(gameView)];
+    
+
     
 }
 -(void)gameView{

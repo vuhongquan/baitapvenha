@@ -10,6 +10,7 @@
 #import "Game2.h"
 @interface Game1 ()
 {
+    UISwitch *_mySwitch;
     UILabel * _scoreYouhave;
     UILabel * _score;
     UIButton * _replay;
@@ -26,7 +27,6 @@
     
     UILabel * _point;
     UILabel * _label1;
-    UIButton * _nextRound;
     UIImageView * _anhChon1;
     UIImageView * _anhChon2;
     NSInteger  _count;
@@ -64,9 +64,14 @@
 - (void)viewDidLoad
 {
     self.title = @"LEVEL 1";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sound/on" style:UIBarButtonItemStyleDone target:self action:@selector(soundOn)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sound/off" style:UIBarButtonItemStyleDone target:self action:@selector(soundoff)];
-    [super viewDidLoad];
+
+    [_mySwitch setOn:NO];
+    _mySwitch = [[UISwitch alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [_mySwitch addTarget:self action:@selector(switchIsChanged:) forControlEvents:UIControlEventValueChanged];
+    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc]
+                                   initWithCustomView:_mySwitch];
+    self.navigationItem.rightBarButtonItem= buttonItem;
+
     _count2 = 0;
     _count = 8;
     _point =[[UILabel alloc]initWithFrame:CGRectMake(20, 20, 100, 40)];
@@ -99,11 +104,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void) soundOn{
-    [self.audioPlayer play];
-}
--(void)soundoff{
-    [self.audioPlayer stop];
+- (void) switchIsChanged:(UISwitch *)soundChange{
+    if ([_mySwitch isOn]) {
+        [self.audioPlayer stop];
+    } else {
+        [self.audioPlayer play];
+    }
 }
 -(void) musicInGame{
     dispatch_queue_t dispatchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -173,7 +179,7 @@
 }
 -(void)refreshProgress{
 
-    progress.progress = _count1/10.0;
+    progress.progress = _count1/50.0;
     _count1--;
     if (_count1==0) {
         [self losegame];
@@ -195,7 +201,7 @@
     _point.font = [UIFont systemFontOfSize:30];
     _point.text =[NSString stringWithFormat:@"Point: %d",_count2];
     [_game1 addSubview:_point];
-    _count1=10.0;
+    _count1=50.0;
     _time1=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshProgress) userInfo:Nil repeats:YES];
     [_time1 fire];
     
@@ -311,16 +317,12 @@
     _scoreYouhave.textColor = [UIColor redColor];
     _scoreYouhave.font = [UIFont systemFontOfSize:60];
     
-    _nextRound = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _nextRound.frame = CGRectMake(325,800, 150, 50);
-    [_nextRound addTarget:self action:@selector(GameView2) forControlEvents:UIControlEventTouchUpInside];
-    [_nextRound setTitle:@"Next Level" forState:UIControlStateNormal];
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"NextRound" style:
+                                              UIBarButtonItemStyleDone target:self action:@selector(GameView2)];
     [self.view addSubview:_scoreYouhave];
     [self.view addSubview:_score];
     [_complete addSubview:_anhnen1];
     [_complete addSubview:_labelA];
-    [_complete addSubview:_nextRound];
     [_game1 addSubview:_complete];
 
 }
