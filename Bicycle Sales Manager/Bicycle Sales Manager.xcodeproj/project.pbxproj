@@ -19,6 +19,16 @@
 		CD9337C5171279060050E2F8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9337C4171279060050E2F8 /* ViewController.m */; };
 		CD9337C8171279060050E2F8 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9337C6171279060050E2F8 /* ViewController_iPhone.xib */; };
 		CD9337CB171279060050E2F8 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9337C9171279060050E2F8 /* ViewController_iPad.xib */; };
+		CD9337D217127C300050E2F8 /* Bicycle.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD9337D117127C300050E2F8 /* Bicycle.plist */; };
+		CD9337D417127C440050E2F8 /* comix.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9337D317127C440050E2F8 /* comix.png */; };
+		CD9337D91712899B0050E2F8 /* mauxe.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9337D81712899B0050E2F8 /* mauxe.png */; };
+		CD9337DB17129AD20050E2F8 /* Money.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9337DA17129AD20050E2F8 /* Money.png */; };
+		CD9337DF1712AD500050E2F8 /* Bicycle.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9337DD1712AD500050E2F8 /* Bicycle.m */; };
+		CD9337E01712AD500050E2F8 /* Bicycle.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9337DE1712AD500050E2F8 /* Bicycle.xib */; };
+		CD9337E51712BCA40050E2F8 /* xedap2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD9337E41712BCA40050E2F8 /* xedap2.jpg */; };
+		CD9337E71712BCA70050E2F8 /* xedap3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD9337E61712BCA70050E2F8 /* xedap3.jpg */; };
+		CD9337E91712BCAF0050E2F8 /* xedap1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD9337E81712BCAF0050E2F8 /* xedap1.jpg */; };
+		CD9337EC1712C6D50050E2F8 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9337EB1712C6D50050E2F8 /* Information.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +49,18 @@
 		CD9337C4171279060050E2F8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CD9337C7171279060050E2F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		CD9337CA171279060050E2F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		CD9337D117127C300050E2F8 /* Bicycle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Bicycle.plist; sourceTree = "<group>"; };
+		CD9337D317127C440050E2F8 /* comix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comix.png; sourceTree = "<group>"; };
+		CD9337D81712899B0050E2F8 /* mauxe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mauxe.png; sourceTree = "<group>"; };
+		CD9337DA17129AD20050E2F8 /* Money.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Money.png; sourceTree = "<group>"; };
+		CD9337DC1712AD500050E2F8 /* Bicycle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bicycle.h; sourceTree = "<group>"; };
+		CD9337DD1712AD500050E2F8 /* Bicycle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bicycle.m; sourceTree = "<group>"; };
+		CD9337DE1712AD500050E2F8 /* Bicycle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Bicycle.xib; sourceTree = "<group>"; };
+		CD9337E41712BCA40050E2F8 /* xedap2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xedap2.jpg; sourceTree = "<group>"; };
+		CD9337E61712BCA70050E2F8 /* xedap3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xedap3.jpg; sourceTree = "<group>"; };
+		CD9337E81712BCAF0050E2F8 /* xedap1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xedap1.jpg; sourceTree = "<group>"; };
+		CD9337EA1712C6D50050E2F8 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Information.h; sourceTree = "<group>"; };
+		CD9337EB1712C6D50050E2F8 /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Information.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +80,12 @@
 		CD93379F171279060050E2F8 = {
 			isa = PBXGroup;
 			children = (
+				CD9337E81712BCAF0050E2F8 /* xedap1.jpg */,
+				CD9337E61712BCA70050E2F8 /* xedap3.jpg */,
+				CD9337E41712BCA40050E2F8 /* xedap2.jpg */,
+				CD9337DA17129AD20050E2F8 /* Money.png */,
+				CD9337D81712899B0050E2F8 /* mauxe.png */,
+				CD9337D317127C440050E2F8 /* comix.png */,
 				CD9337B1171279060050E2F8 /* Bicycle Sales Manager */,
 				CD9337AA171279060050E2F8 /* Frameworks */,
 				CD9337A9171279060050E2F8 /* Products */,
@@ -91,6 +119,7 @@
 				CD9337C4171279060050E2F8 /* ViewController.m */,
 				CD9337C6171279060050E2F8 /* ViewController_iPhone.xib */,
 				CD9337C9171279060050E2F8 /* ViewController_iPad.xib */,
+				CD9337D5171283260050E2F8 /* ViewOfList */,
 				CD9337B2171279060050E2F8 /* Supporting Files */,
 			);
 			path = "Bicycle Sales Manager";
@@ -108,6 +137,19 @@
 				CD9337C1171279060050E2F8 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD9337D5171283260050E2F8 /* ViewOfList */ = {
+			isa = PBXGroup;
+			children = (
+				CD9337D117127C300050E2F8 /* Bicycle.plist */,
+				CD9337DC1712AD500050E2F8 /* Bicycle.h */,
+				CD9337DD1712AD500050E2F8 /* Bicycle.m */,
+				CD9337DE1712AD500050E2F8 /* Bicycle.xib */,
+				CD9337EA1712C6D50050E2F8 /* Information.h */,
+				CD9337EB1712C6D50050E2F8 /* Information.m */,
+			);
+			name = ViewOfList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +209,14 @@
 				CD9337C2171279060050E2F8 /* Default-568h@2x.png in Resources */,
 				CD9337C8171279060050E2F8 /* ViewController_iPhone.xib in Resources */,
 				CD9337CB171279060050E2F8 /* ViewController_iPad.xib in Resources */,
+				CD9337D217127C300050E2F8 /* Bicycle.plist in Resources */,
+				CD9337D417127C440050E2F8 /* comix.png in Resources */,
+				CD9337D91712899B0050E2F8 /* mauxe.png in Resources */,
+				CD9337DB17129AD20050E2F8 /* Money.png in Resources */,
+				CD9337E01712AD500050E2F8 /* Bicycle.xib in Resources */,
+				CD9337E51712BCA40050E2F8 /* xedap2.jpg in Resources */,
+				CD9337E71712BCA70050E2F8 /* xedap3.jpg in Resources */,
+				CD9337E91712BCAF0050E2F8 /* xedap1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +230,8 @@
 				CD9337B8171279060050E2F8 /* main.m in Sources */,
 				CD9337BC171279060050E2F8 /* AppDelegate.m in Sources */,
 				CD9337C5171279060050E2F8 /* ViewController.m in Sources */,
+				CD9337DF1712AD500050E2F8 /* Bicycle.m in Sources */,
+				CD9337EC1712C6D50050E2F8 /* Information.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +329,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bicycle Sales Manager/Bicycle Sales Manager-Prefix.pch";
 				INFOPLIST_FILE = "Bicycle Sales Manager/Bicycle Sales Manager-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -288,7 +342,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bicycle Sales Manager/Bicycle Sales Manager-Prefix.pch";
 				INFOPLIST_FILE = "Bicycle Sales Manager/Bicycle Sales Manager-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
