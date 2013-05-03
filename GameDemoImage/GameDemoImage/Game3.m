@@ -211,8 +211,8 @@
             return;
         }
     }
-    
-    [UIView transitionWithView:imageView2 duration:0.5
+
+    [UIView transitionWithView:imageView2 duration:0.2
                        options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
                            imageView2.image = [UIImage imageNamed:_game3ImageView[imageView2.tag]];
                        }
@@ -238,13 +238,13 @@
                                 }
                             } else {
                                 NSLog(@"Sai");
-                                [UIView transitionWithView:_anhChon1 duration:0.5
+                                [UIView transitionWithView:_anhChon1 duration:0.2
                                                    options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
                                                        _anhChon1.image = [UIImage imageNamed:@"anhcard.jpg"];
                                                    }
                                                 completion:^(BOOL finished){}];
-                                
-                                [UIView transitionWithView:_anhChon2 duration:0.5
+                            
+                                [UIView transitionWithView:_anhChon2 duration:0.2
                                                    options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
                                                        _anhChon2.image = [UIImage imageNamed:@"anhcard.jpg"];
                                                    }
