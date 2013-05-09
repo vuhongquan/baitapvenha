@@ -10,6 +10,9 @@
 
 @interface ViewController ()
 {
+    UIButton *_textPoint;
+    UIButton *_textPoint1;
+    UIButton *_textPoint2;
     NSArray *_arrayFruit;
     UIView *_viewGame;
     UIView *_viewGame1;
@@ -21,6 +24,7 @@
     UIImageView*_imageView1;
     UIButton *_buttonStartGame;
     NSTimer *_timerCountGame;
+    UILabel *_labalPointHave;
     float count;
     float counttime;
     float a;
@@ -31,6 +35,7 @@
     NSArray *_arrayCount1;
     NSMutableArray *_arrayCountTime;
     NSMutableArray *_arrayCountTime1;
+    UILabel *_buttonPoint;
 }
 @end
 
@@ -71,13 +76,36 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    labelPoint = [[UILabel alloc]init];
-    labelPoint.frame = CGRectMake(100,40,200,40);
-    labelPoint.text = [NSString stringWithFormat:@"Tien:%d.000 VND",pointWin];
-    [self.view addSubview:labelPoint];
+    pointWin = 1500000;
     
+    _buttonPoint = [[UILabel alloc]init];
+    _buttonPoint.frame = CGRectMake(0, 10,40,50);
+    _buttonPoint.numberOfLines = 2;
+    
+    _textPoint = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    _textPoint.frame = CGRectMake(60, 10,120,25);
+    [_textPoint setTitle:@"1.500.000 VND" forState:UIControlStateNormal];
+    [_textPoint addTarget:self action:@selector(NapTien1) forControlEvents:UIControlEventTouchUpInside];
+    
+    _textPoint1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    _textPoint1.frame = CGRectMake(190, 10,120,25);
+    [_textPoint1 setTitle:@"2.500.000 VND" forState:UIControlStateNormal];
+    [_textPoint1 addTarget:self action:@selector(NapTien2) forControlEvents:UIControlEventTouchUpInside];
+    
+    _textPoint2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    _textPoint2.frame = CGRectMake(120,40,120,25);
+    [_textPoint2 setTitle:@"3.500.000 VND" forState:UIControlStateNormal];
+    [_textPoint2 addTarget:self action:@selector(NapTien3) forControlEvents:UIControlEventTouchUpInside];
+    
+    labelPoint = [[UILabel alloc]init];
+    labelPoint.frame = CGRectMake(90,70,200,20);
+    
+    _labalPointHave = [[UILabel alloc]init];
+    _labalPointHave.frame = CGRectMake(10,10,200,20);
+    _labalPointHave.text = [NSString stringWithFormat:@"So tien:%d VND",pointWin];
+    [self.view addSubview:_labalPointHave];
     _buttonStartGame = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _buttonStartGame.frame = CGRectMake(110,20,100, 30);
+    _buttonStartGame.frame = CGRectMake(110,40,100, 30);
     [_buttonStartGame setTitle:@"PlayGame" forState:UIControlStateNormal];
     [_buttonStartGame addTarget:self action:@selector(rotateViewGame) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_buttonStartGame];
@@ -95,17 +123,32 @@
     
     if (count==0) {
         [self.view addSubview:_buttonStartGame];
-        
         NSLog(@"%d",(times + times1)%8);
         NSLog(@"time : %d",times);
         NSLog(@"time1 : %d",times1);
         if ((times + times1)%8 == 0) {
             [self.audioPlayer play];
             NSLog(@"dung");
-            pointWin += 400.000;
-            labelPoint.text = [NSString stringWithFormat:@"Tien:%d.000 VND",pointWin];
+            pointWin += 800000;
+            labelPoint.text = [NSString stringWithFormat:@"Tien duoc:800.000 VND"];
+            _labalPointHave.text = [NSString stringWithFormat:@"So tien:%d VND",pointWin];
+            [self.view addSubview:labelPoint];
+        }else{
+            pointWin -= 400000;
+            labelPoint.text = [NSString stringWithFormat:@"Tien mat:-400.000 VND"];
+            _labalPointHave.text = [NSString stringWithFormat:@"So tien:%d VND",pointWin];
+            [self.view addSubview:labelPoint];
         }
-        
+        if (pointWin<=300000) {
+            [self.view addSubview:_textPoint];
+            [self.view addSubview:_textPoint1];
+            [self.view addSubview:_textPoint2];
+            _buttonPoint.text = @"Nap Tien:";
+            [_labalPointHave removeFromSuperview];
+            [_buttonStartGame removeFromSuperview];
+            
+            [self.view addSubview:_buttonPoint];
+        }
         
         NSBundle *mainBundle1 = [NSBundle mainBundle];
         
@@ -132,6 +175,7 @@
     }
 }
 -(void)rotateViewGame{
+    [labelPoint removeFromSuperview];
     [_buttonStartGame removeFromSuperview];
     times = 0;
     times1= 0;
@@ -237,5 +281,35 @@
     times1++;
     _viewGame1.transform=CGAffineTransformMakeRotation(-M_PI/4*times1);
     
+}
+-(void)NapTien1{
+    pointWin +=1500000;
+    _labalPointHave.text = [NSString stringWithFormat:@"So tien:%d VND",pointWin];
+    [self.view addSubview:_labalPointHave];
+    [_textPoint removeFromSuperview];
+    [_textPoint1 removeFromSuperview];
+    [_textPoint2 removeFromSuperview];
+    [_buttonPoint removeFromSuperview];
+    [self.view addSubview:_buttonStartGame];
+}
+-(void)NapTien2{
+    pointWin +=2500000;
+    _labalPointHave.text = [NSString stringWithFormat:@"So tien:%d VND",pointWin];
+    [self.view addSubview:_labalPointHave];
+    [_textPoint removeFromSuperview];
+    [_textPoint1 removeFromSuperview];
+    [_textPoint2 removeFromSuperview];
+    [_buttonPoint removeFromSuperview];
+    [self.view addSubview:_buttonStartGame];
+}
+-(void)NapTien3{
+    pointWin +=3500000;
+    _labalPointHave.text = [NSString stringWithFormat:@"So tien:%d VND",pointWin];
+    [self.view addSubview:_labalPointHave];
+    [_textPoint removeFromSuperview];
+    [_textPoint1 removeFromSuperview];
+    [_textPoint2 removeFromSuperview];
+    [_buttonPoint removeFromSuperview];
+    [self.view addSubview:_buttonStartGame];
 }
 @end
