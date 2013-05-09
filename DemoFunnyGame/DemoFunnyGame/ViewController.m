@@ -100,9 +100,10 @@
         NSLog(@"time : %d",times);
         NSLog(@"time1 : %d",times1);
         if ((times + times1)%8 == 0) {
+            [self.audioPlayer play];
             NSLog(@"dung");
             pointWin += 400.000;
-            labelPoint.text = [NSString stringWithFormat:@"Tien:%d VND",pointWin];
+            labelPoint.text = [NSString stringWithFormat:@"Tien:%d.000 VND",pointWin];
         }
         
         
@@ -128,8 +129,6 @@
         [_timerViewRotateGame1 invalidate];
         [_timerCountGame invalidate];
         [self.audioPlayerEndGame stop];
-        [self.audioPlayer play];
-
     }
 }
 -(void)rotateViewGame{

@@ -30,7 +30,7 @@
 		CD725F741739F8C500A7B01F /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD725F731739F8C500A7B01F /* 1.mp3 */; };
 		CD725F761739F8CA00A7B01F /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD725F751739F8CA00A7B01F /* 2.mp3 */; };
 		CD725F781739F97E00A7B01F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD725F771739F97E00A7B01F /* AVFoundation.framework */; };
-		CD9B8273173BB255002A9ABB /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9B8272173BB255002A9ABB /* images.png */; };
+		CD9B82A7173BCB28002A9ABB /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9B82A6173BCB28002A9ABB /* images.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +62,7 @@
 		CD725F731739F8C500A7B01F /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
 		CD725F751739F8CA00A7B01F /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2.mp3; sourceTree = "<group>"; };
 		CD725F771739F97E00A7B01F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		CD9B8272173BB255002A9ABB /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = images.png; path = ../../../Desktop/images.png; sourceTree = "<group>"; };
+		CD9B82A6173BCB28002A9ABB /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = images.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +148,7 @@
 			children = (
 				CD725F731739F8C500A7B01F /* 1.mp3 */,
 				CD725F751739F8CA00A7B01F /* 2.mp3 */,
-				CD9B8272173BB255002A9ABB /* images.png */,
+				CD9B82A6173BCB28002A9ABB /* images.png */,
 				CD70F1DE173779E300BFF321 /* Untitled.png */,
 				CD6D880D1734D09800FB1030 /* Pear.png */,
 				CD6D880B1734D09300FB1030 /* Orange.png */,
@@ -230,7 +230,7 @@
 				CD70F1E11737A39900BFF321 /* theme.png in Resources */,
 				CD725F741739F8C500A7B01F /* 1.mp3 in Resources */,
 				CD725F761739F8CA00A7B01F /* 2.mp3 in Resources */,
-				CD9B8273173BB255002A9ABB /* images.png in Resources */,
+				CD9B82A7173BCB28002A9ABB /* images.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
