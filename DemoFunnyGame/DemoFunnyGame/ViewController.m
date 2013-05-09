@@ -25,6 +25,8 @@
     float counttime;
     float a;
     float b;
+    int pointWin;
+    UILabel * labelPoint;
     NSArray *_arrayCount;
     NSArray *_arrayCount1;
     NSMutableArray *_arrayCountTime;
@@ -39,8 +41,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _arrayFruit = @[@"Pear.png",@"Orange.png",@"teachers_day.png",@"Apricot.png",@"Strawberry.png",@"Lime.png",@"Banana.png",@"Coconut.png"];
-        _arrayCount = @[[NSNumber numberWithFloat:0.001],[NSNumber numberWithFloat:0.002],[NSNumber numberWithFloat:0.003],[NSNumber numberWithFloat:0.004]];
-        _arrayCount1 = @[[NSNumber numberWithFloat:0.005],[NSNumber numberWithFloat:0.004],[NSNumber numberWithFloat:0.006],[NSNumber numberWithFloat:0.007]];
+        _arrayCount = @[[NSNumber numberWithFloat:0.1],[NSNumber numberWithFloat:0.02],[NSNumber numberWithFloat:0.03],[NSNumber numberWithFloat:0.04]];
+        _arrayCount1 = @[[NSNumber numberWithFloat:0.01],[NSNumber numberWithFloat:0.04],[NSNumber numberWithFloat:0.06],[NSNumber numberWithFloat:0.07]];
         _arrayCountTime = [NSMutableArray arrayWithArray:_arrayCount];
         _arrayCountTime1 = [NSMutableArray arrayWithArray:_arrayCount1];
         NSBundle *mainBundle = [NSBundle mainBundle];
@@ -69,12 +71,16 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
+    labelPoint = [[UILabel alloc]init];
+    labelPoint.frame = CGRectMake(100,40,200,40);
+    labelPoint.text = [NSString stringWithFormat:@"Tien:%d.000 VND",pointWin];
+    [self.view addSubview:labelPoint];
+    
     _buttonStartGame = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     _buttonStartGame.frame = CGRectMake(110,20,100, 30);
     [_buttonStartGame setTitle:@"PlayGame" forState:UIControlStateNormal];
     [_buttonStartGame addTarget:self action:@selector(rotateViewGame) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_buttonStartGame];
-    
     [self createView];
 	// Do any additional setup after loading the view.
 }
@@ -88,6 +94,16 @@
        count--;
     
     if (count==0) {
+        [self.view addSubview:_buttonStartGame];
+        
+        NSLog(@"%d",(times + times1)%8);
+        NSLog(@"time : %d",times);
+        NSLog(@"time1 : %d",times1);
+        if ((times + times1)%8 == 0) {
+            NSLog(@"dung");
+            pointWin += 400.000;
+            labelPoint.text = [NSString stringWithFormat:@"Tien:%d VND",pointWin];
+        }
         
         
         NSBundle *mainBundle1 = [NSBundle mainBundle];
@@ -113,13 +129,14 @@
         [_timerCountGame invalidate];
         [self.audioPlayerEndGame stop];
         [self.audioPlayer play];
-        _viewGame.transform=CGAffineTransformMakeRotation(M_PI/4);
+
     }
 }
 -(void)rotateViewGame{
+    [_buttonStartGame removeFromSuperview];
     times = 0;
     times1= 0;
-    count  =3;
+    count  =2;
     _timerCountGame = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(count) userInfo:nil repeats:YES];
     for (int i=0;i<4; i++) {
         int randomNum = arc4random()% ([_arrayCountTime count]);
@@ -132,12 +149,12 @@
         b = [_arrayCountTime1[i] floatValue];
     }
     
-        _timerViewRotateGame1 =[NSTimer scheduledTimerWithTimeInterval:b
+        _timerViewRotateGame1 =[NSTimer scheduledTimerWithTimeInterval:a
                                                    target:self
                                                    selector:@selector(rotateView1)
                                                    userInfo:nil
                                                    repeats:YES];
-    _timerViewRotateGame =[NSTimer scheduledTimerWithTimeInterval:a
+    _timerViewRotateGame =[NSTimer scheduledTimerWithTimeInterval:b
                                                      target:self
                                                      selector:@selector(rotateView)
                                                      userInfo:nil
@@ -212,12 +229,14 @@
     }
 }
 -(void)rotateView{
-    _viewGame.transform=CGAffineTransformMakeRotation(M_PI/100*times);
     times++;
+    _viewGame.transform=CGAffineTransformMakeRotation(M_PI/4*times);
+    
     [self.audioPlayerEndGame play];
 }
 -(void)rotateView1{
-    _viewGame1.transform=CGAffineTransformMakeRotation(-M_PI/100*times1);
     times1++;
+    _viewGame1.transform=CGAffineTransformMakeRotation(-M_PI/4*times1);
+    
 }
 @end
