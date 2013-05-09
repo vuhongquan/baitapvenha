@@ -27,10 +27,10 @@
 		CD70F1D6173758F300BFF321 /* Coconut.png in Resources */ = {isa = PBXBuildFile; fileRef = CD70F1D5173758F300BFF321 /* Coconut.png */; };
 		CD70F1DF173779E300BFF321 /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = CD70F1DE173779E300BFF321 /* Untitled.png */; };
 		CD70F1E11737A39900BFF321 /* theme.png in Resources */ = {isa = PBXBuildFile; fileRef = CD70F1E01737A39900BFF321 /* theme.png */; };
-		CD70F1E51737A97100BFF321 /* theme1.png in Resources */ = {isa = PBXBuildFile; fileRef = CD70F1E41737A97100BFF321 /* theme1.png */; };
 		CD725F741739F8C500A7B01F /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD725F731739F8C500A7B01F /* 1.mp3 */; };
 		CD725F761739F8CA00A7B01F /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD725F751739F8CA00A7B01F /* 2.mp3 */; };
 		CD725F781739F97E00A7B01F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD725F771739F97E00A7B01F /* AVFoundation.framework */; };
+		CD9B8273173BB255002A9ABB /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9B8272173BB255002A9ABB /* images.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,10 +59,10 @@
 		CD70F1D5173758F300BFF321 /* Coconut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Coconut.png; sourceTree = "<group>"; };
 		CD70F1DE173779E300BFF321 /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled.png; sourceTree = "<group>"; };
 		CD70F1E01737A39900BFF321 /* theme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = theme.png; sourceTree = "<group>"; };
-		CD70F1E41737A97100BFF321 /* theme1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = theme1.png; sourceTree = "<group>"; };
 		CD725F731739F8C500A7B01F /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
 		CD725F751739F8CA00A7B01F /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2.mp3; sourceTree = "<group>"; };
 		CD725F771739F97E00A7B01F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CD9B8272173BB255002A9ABB /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = images.png; path = ../../../Desktop/images.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +148,7 @@
 			children = (
 				CD725F731739F8C500A7B01F /* 1.mp3 */,
 				CD725F751739F8CA00A7B01F /* 2.mp3 */,
-				CD70F1E41737A97100BFF321 /* theme1.png */,
+				CD9B8272173BB255002A9ABB /* images.png */,
 				CD70F1DE173779E300BFF321 /* Untitled.png */,
 				CD6D880D1734D09800FB1030 /* Pear.png */,
 				CD6D880B1734D09300FB1030 /* Orange.png */,
@@ -228,9 +228,9 @@
 				CD70F1D6173758F300BFF321 /* Coconut.png in Resources */,
 				CD70F1DF173779E300BFF321 /* Untitled.png in Resources */,
 				CD70F1E11737A39900BFF321 /* theme.png in Resources */,
-				CD70F1E51737A97100BFF321 /* theme1.png in Resources */,
 				CD725F741739F8C500A7B01F /* 1.mp3 in Resources */,
 				CD725F761739F8CA00A7B01F /* 2.mp3 in Resources */,
+				CD9B8273173BB255002A9ABB /* images.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

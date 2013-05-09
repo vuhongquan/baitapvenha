@@ -39,7 +39,7 @@
     buttonA.frame = CGRectMake(0, 0, 100, 30);
     [self.view addSubview:buttonA];
     for (int i = 0; i<[_arrayWebAsia count]; i++) {
-    NSString *stringURL = [NSString stringWithFormat:@"%@",[_arrayWebAsia valueForKey:@"URL"]];
+    NSString *stringURL = [NSString stringWithFormat:@"%@",[_arrayWebAsia[i] valueForKey:@"URL"]];
     NSURL *url = [NSURL URLWithString:stringURL];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     [webview loadRequest:request];

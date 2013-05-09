@@ -181,13 +181,9 @@
     _imageView1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Untitled.png"]];
     _imageView1.frame = CGRectMake(0,0,200,200);
     [_viewGame1 addSubview:_imageView1];
-    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"theme.png"]];
-    imageView.frame = CGRectMake(10, 100, 300, 300);
-    imageView.alpha = 0;
-    UIImageView *imageView1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"theme1.png"]];
-    imageView1.frame = CGRectMake(5,95, 310,310);
+    UIImageView *imageView1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"images.png"]];
+    imageView1.frame = CGRectMake(0,87, 320,320);
     [self.view addSubview:imageView1];
-    [self.view addSubview:imageView];
     for (int i = 0; i<[_arrayFruit count]; i++) {
         UIImageView *imageGame = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",_arrayFruit[i]]]];
         if (i<=1) {
