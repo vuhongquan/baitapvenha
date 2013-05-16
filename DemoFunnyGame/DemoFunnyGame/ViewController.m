@@ -10,6 +10,9 @@
 
 @interface ViewController ()
 {
+    UIAlertView *_theEnd;
+    UIAlertView *_alertLoseGame;
+    UIImageView *imageView1;
     UIButton *_textPoint;
     UIButton *_textPoint1;
     UIButton *_textPoint2;
@@ -78,30 +81,45 @@
     [super viewWillAppear:YES];
     pointWin = 1500000;
     
+    UIImageView *imageTheme = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"1.jpg"]];
+    imageTheme.frame = self.view.bounds;
+    [self.view addSubview:imageTheme];
     _buttonPoint = [[UILabel alloc]init];
     _buttonPoint.frame = CGRectMake(0, 10,40,50);
     _buttonPoint.numberOfLines = 2;
     
+    _alertLoseGame = [[UIAlertView alloc]initWithTitle:@"Warring" message:@"So tien con lai cua ban khong du choi moi ban nap them tien" delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil, nil];
+    [_alertLoseGame setAlertViewStyle:UIAlertViewStyleDefault];
+    
+    _theEnd = [[UIAlertView alloc]initWithTitle:@"Good Job" message:@"Ban nap tien thanh cong" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [_theEnd setAlertViewStyle:UIAlertViewStyleDefault];
+    
     _textPoint = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     _textPoint.frame = CGRectMake(60, 10,120,25);
+    _textPoint.backgroundColor = [UIColor clearColor];
     [_textPoint setTitle:@"1.500.000 VND" forState:UIControlStateNormal];
     [_textPoint addTarget:self action:@selector(NapTien1) forControlEvents:UIControlEventTouchUpInside];
     
     _textPoint1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     _textPoint1.frame = CGRectMake(190, 10,120,25);
+     _textPoint1.backgroundColor = [UIColor clearColor];
     [_textPoint1 setTitle:@"2.500.000 VND" forState:UIControlStateNormal];
     [_textPoint1 addTarget:self action:@selector(NapTien2) forControlEvents:UIControlEventTouchUpInside];
     
     _textPoint2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     _textPoint2.frame = CGRectMake(120,40,120,25);
+     _textPoint2.backgroundColor = [UIColor clearColor];
     [_textPoint2 setTitle:@"3.500.000 VND" forState:UIControlStateNormal];
     [_textPoint2 addTarget:self action:@selector(NapTien3) forControlEvents:UIControlEventTouchUpInside];
     
     labelPoint = [[UILabel alloc]init];
     labelPoint.frame = CGRectMake(90,70,200,20);
-    
+    labelPoint.textColor = [UIColor redColor];
+    labelPoint.backgroundColor = [UIColor clearColor];
     _labalPointHave = [[UILabel alloc]init];
     _labalPointHave.frame = CGRectMake(10,10,200,20);
+    _labalPointHave.textColor=[UIColor redColor];
+    _labalPointHave.backgroundColor = [UIColor clearColor];
     _labalPointHave.text = [NSString stringWithFormat:@"So tien:%d VND",pointWin];
     [self.view addSubview:_labalPointHave];
     _buttonStartGame = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -143,7 +161,10 @@
             [self.view addSubview:_textPoint];
             [self.view addSubview:_textPoint1];
             [self.view addSubview:_textPoint2];
+            [_alertLoseGame show];
             _buttonPoint.text = @"Nap Tien:";
+            _buttonPoint.backgroundColor = [UIColor clearColor];
+            _buttonPoint.textColor = [UIColor redColor];
             [_labalPointHave removeFromSuperview];
             [_buttonStartGame removeFromSuperview];
             
@@ -205,9 +226,11 @@
 }
 -(void)createView{
     _viewGame = [[UIView alloc]initWithFrame:CGRectMake(10,100,300,300)];
+    _viewGame.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_viewGame];
     _imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Untitled.png"]];
     _imageView.frame = CGRectMake(0,0, 300,300);
+    _imageView.backgroundColor = [UIColor clearColor];
     [_viewGame addSubview:_imageView];
     for (int i = 0; i<[_arrayFruit count]; i++) {
         UIImageView *imageGame = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",_arrayFruit[i]]]];
@@ -241,8 +264,8 @@
     _imageView1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Untitled.png"]];
     _imageView1.frame = CGRectMake(0,0,200,200);
     [_viewGame1 addSubview:_imageView1];
-    UIImageView *imageView1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"images.png"]];
-    imageView1.frame = CGRectMake(0,87, 320,320);
+    imageView1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"images.png"]];
+    imageView1.frame = CGRectMake(-11,81, 350,350);
     [self.view addSubview:imageView1];
     for (int i = 0; i<[_arrayFruit count]; i++) {
         UIImageView *imageGame = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",_arrayFruit[i]]]];
@@ -291,6 +314,7 @@
     [_textPoint2 removeFromSuperview];
     [_buttonPoint removeFromSuperview];
     [self.view addSubview:_buttonStartGame];
+    [_theEnd show];
 }
 -(void)NapTien2{
     pointWin +=2500000;
@@ -301,6 +325,7 @@
     [_textPoint2 removeFromSuperview];
     [_buttonPoint removeFromSuperview];
     [self.view addSubview:_buttonStartGame];
+    [_theEnd show];
 }
 -(void)NapTien3{
     pointWin +=3500000;
@@ -311,5 +336,6 @@
     [_textPoint2 removeFromSuperview];
     [_buttonPoint removeFromSuperview];
     [self.view addSubview:_buttonStartGame];
+    [_theEnd show];
 }
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD2B1E6F1744882000C68F0D /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD2B1E6E1744882000C68F0D /* 1.jpg */; };
+		CD2B1E71174489AD00C68F0D /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2B1E70174489AD00C68F0D /* images.png */; };
 		CD6D87E21734CEA600FB1030 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6D87E11734CEA600FB1030 /* UIKit.framework */; };
 		CD6D87E41734CEA600FB1030 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6D87E31734CEA600FB1030 /* Foundation.framework */; };
 		CD6D87E61734CEA600FB1030 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6D87E51734CEA600FB1030 /* CoreGraphics.framework */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD2B1E6E1744882000C68F0D /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		CD2B1E70174489AD00C68F0D /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = images.png; sourceTree = "<group>"; };
 		CD6D87DE1734CEA600FB1030 /* DemoFunnyGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoFunnyGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6D87E11734CEA600FB1030 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CD6D87E31734CEA600FB1030 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -149,8 +153,10 @@
 			isa = PBXGroup;
 			children = (
 				CD725F731739F8C500A7B01F /* 1.mp3 */,
+				CD2B1E6E1744882000C68F0D /* 1.jpg */,
 				CD725F751739F8CA00A7B01F /* 2.mp3 */,
 				CD9B82A8173BD43B002A9ABB /* imageIcon.png */,
+				CD2B1E70174489AD00C68F0D /* images.png */,
 				CD9B82A6173BCB28002A9ABB /* images.png */,
 				CD70F1DE173779E300BFF321 /* Untitled.png */,
 				CD6D880D1734D09800FB1030 /* Pear.png */,
@@ -235,6 +241,8 @@
 				CD725F761739F8CA00A7B01F /* 2.mp3 in Resources */,
 				CD9B82A7173BCB28002A9ABB /* images.png in Resources */,
 				CD9B82A9173BD43B002A9ABB /* imageIcon.png in Resources */,
+				CD2B1E6F1744882000C68F0D /* 1.jpg in Resources */,
+				CD2B1E71174489AD00C68F0D /* images.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
